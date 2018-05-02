@@ -3,16 +3,13 @@
 
 <h:form id="menuform">
 	<div class="layout-menu">
-		<p:accordionPanel multiple="true" >
-<!-- 			<p:tab title="#{msg.user}"> -->
-			<p:tab title="User" >
-				<ui:fragment>
+		<ui:fragment>
 					<div class="profile profile-expanded">
 						<div class="profile-image"></div>
 							<span class="profile-name">Jane Williams</span> 
-<!-- 							<a id="profile-options" href="#"> 
+							<a id="profile-options" href="#"> 
 							<i class="material-icons">&#xE313;</i>
-							</a> -->
+							</a>
 					</div>
 
 					<ul id="profile-menu" class="ultima-menu" style="display: block;">
@@ -26,51 +23,11 @@
 						</a></li>
 					</ul>
 				</ui:fragment>
-			</p:tab>
-			<p:tab title="Hierarchy">
-				asdfasdf
-			</p:tab>
-			<p:tab title="Hierarchy">
-				asdfasdf
-			</p:tab>
-			
-			<p:tab title="Hierarchy">
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-					<li role="menuitem"><a href="#" class="ripplelink"> <i class="material-icons">&#xE8AC;</i> <span>Logout</span>
-						</a></li>
-			</p:tab>
-			
-		</p:accordionPanel>
-
-
+		
 		<pu:menu widgetVar="me1">
-
 		</pu:menu>
 
-
+		<ui:insert name="menuContent" />
 	</div>
-</h:form>
+		</h:form>
 </ui:composition>

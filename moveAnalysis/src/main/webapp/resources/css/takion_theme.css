@@ -1,3 +1,52 @@
+/* .takion.ui-panelgrid  .ui-panelgrid-cell:nth-child(1){
+	padding:0px;
+	border-right: 1px solid #212121;
+	border-top: 0px solid white;
+	border-bottom: 0px solid white;
+	border-left :0px solid #212121 ;
+}
+.takion.ui-panelgrid  .ui-panelgrid-cell{
+	
+}
+*/
+.ui-panelgrid .ui-panelgrid-cell.takion-left{
+	padding:0px;
+	width: 50%;
+	border-right: 1px solid #212121;
+	border-top: 0px solid white;
+	border-bottom: 0px solid white;
+	border-left :0px solid #212121 ;
+	
+	
+} 
+.ui-panelgrid .ui-panelgrid-cell.takion-right{
+	padding:0px;
+	width: 50%;
+	border : 0px;
+	
+}
+
+.ui-columntoggler .ui-columntoggler-close{
+	display: none;
+}
+
+body.layout-compact .takion-button.ui-button{
+	font-size: 12;
+	height : 24;
+	background-color : white;
+	color : #212121;
+}
+
+body.layout-compact .takion-button.ui-button .ui-button-text{
+	line-height : 20px;
+	
+}
+
+body.layout-compact .takion-button.ui-button.ui-button-text-icon-left .ui-icon{
+		color :#607D8B; 
+}
+
+
 .ui-datatable .takion-table thead th.ui-state-active, .takion-table thead th.ui-state-highlight{
 	background-color : transparent;
 	border-top: 5px solid #8BC34A;
