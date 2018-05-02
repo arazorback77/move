@@ -1,0 +1,48 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 	xmlns:f="http://xmlns.jcp.org/jsf/core" 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions"
+	>
+
+  <h:form id="formMenuSetting" >
+  	
+    <p:dataTable id="tableFeRst" value="#{gocFeRstBean.feRstList}" var="_row" widgetVar="dtMegaMenu" reflow="true" 
+      emptyMessage="No History Data found with given criteria. Change the Dates"
+      rowKey="#{_row}" rowIndexVar="rowIndex"
+      selectionMode="single"
+      sortMode="multiple" 
+      editable="true" editMode="cell"
+      resizableColumns="true" 
+      resizeMode="expand"
+      scrollable="true" scrollHeight="500"
+	  	paginatorAlwaysVisible="true"
+      paginator="true" paginatorPosition="bottom" rows="15"
+      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {JumpToPageDropdown} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+      rowsPerPageTemplate="10,15,25,50" 
+      style="margin:0.5em;"
+      tableStyleClass="takion-table" >
+      	
+       
+        <p:column headerText="baseDate" sortBy="#{_row.baseDate}" filterBy="#{_row.baseDate}" filterMatchMode="contains"  filterStyle="width:100%">
+       		<h:outputText value="#{_row.baseDate}" />
+       </p:column>
+       	
+        <p:column headerText="gocId" sortBy="#{_row.gocId}" filterBy="#{_row.gocId}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.gocId}" />
+       </p:column>
+        <p:column headerText="feCode" sortBy="#{_row.feCode}" filterBy="#{_row.feCode}" filterMatchMode="contains"  filterStyle="width:100%">
+       		<h:outputText value="#{_row.feCode}" />
+       </p:column>
+        <p:column headerText="fe value" sortBy="#{_row.feResult}" filterBy="#{_row.feResult}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.feResult}" />
+       </p:column>
+       	
+       
+      
+       
+    </p:dataTable> 
+   
+  	
+  </h:form>
+</ui:composition>

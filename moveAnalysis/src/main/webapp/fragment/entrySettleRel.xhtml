@@ -1,0 +1,57 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 	xmlns:f="http://xmlns.jcp.org/jsf/core" 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions"
+	>
+
+  <h:form id="formEntrySettleRel" >
+  	
+    <p:dataTable id="tableEntrySettle" value="#{entrySettleRelBean.entrySettleRelList}" var="_row" widgetVar="wgEntrySettleRel" reflow="true" 
+      emptyMessage="No History Data found with given criteria. Change the Dates"
+      rowKey="#{_row}" rowIndexVar="rowIndex"
+      selectionMode="single"
+      sortMode="multiple" 
+      editable="true" editMode="cell"
+      resizableColumns="true" 
+      resizeMode="expand"
+      scrollable="true" scrollHeight="500"
+	  	paginatorAlwaysVisible="true"
+      paginator="true" paginatorPosition="bottom" rows="15"
+      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {JumpToPageDropdown} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+      rowsPerPageTemplate="10,15,25,50" 
+       style="margin:0.5em;" 
+       tableStyleClass="takion-table" >
+      	
+       
+        <p:column headerText="EntryId" sortBy="#{_row.entryMst.entryId}" filterBy="#{_row.entryMst.entryId}" filterMatchMode="contains"  filterStyle="width:100%">
+       		<h:outputText value="#{_row.entryMst.entryId}" />
+       </p:column>
+        <p:column headerText="EntryName" sortBy="#{_row.entryMst.entryName}" filterBy="#{_row.entryMst.entryName}" filterMatchMode="contains"  filterStyle="width:100%">
+       		<h:outputText value="#{_row.entryMst.entryName}" />
+       </p:column>
+        <p:column headerText="EngtrySeq" sortBy="#{_row.entrySeq}" filterBy="#{_row.entrySeq}" filterMatchMode="contains"  filterStyle="width:100%">
+       		<h:outputText value="#{_row.entrySeq}" />
+       </p:column>
+       	
+        <p:column headerText="SettleId" sortBy="#{_row.settleMst.settleId}" filterBy="#{_row.settleMst.settleId}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.settleMst.settleId}" />
+       </p:column>
+        <p:column headerText="SettleName" sortBy="#{_row.settleMst.settleName}" filterBy="#{_row.settleMst.settleName}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.settleMst.settleName}" />
+       </p:column>
+        <p:column headerText="UseFeYn" sortBy="#{_row.useFeYn}" filterBy="#{_row.useFeYn}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.useFeYn}" />
+       </p:column>
+        <p:column headerText="EntryApplyType" sortBy="#{_row.entryApplyType}" filterBy="#{_row.entryApplyType}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.entryApplyType}" />
+       </p:column>
+        <p:column headerText="FeConvertYn" sortBy="#{_row.feConvertYn}" filterBy="#{_row.feConvertYn}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.feConvertYn}" />
+       </p:column>
+        <p:column headerText="ShowEntryYn" sortBy="#{_row.showEntryYn}" filterBy="#{_row.showEntryYn}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.showEntryYn}" />
+       </p:column>
+    </p:dataTable> 
+  </h:form>
+</ui:composition>

@@ -1,0 +1,48 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 	xmlns:f="http://xmlns.jcp.org/jsf/core" 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions"
+	>
+
+  <h:form id="fromSettleMsgt" >
+  	
+    <p:dataTable id="tableSettleMst" value="#{settleMstBean.settleMstList}" var="_row" widgetVar="wgSettleMst" reflow="true" 
+      emptyMessage="No History Data found with given criteria. Change the Dates"
+      rowKey="#{_row}" rowIndexVar="rowIndex"
+      selectionMode="single"
+      sortMode="multiple" 
+      editable="true" editMode="cell"
+      resizableColumns="true" 
+      resizeMode="expand"
+      scrollable="true" scrollHeight="500"
+	  	paginatorAlwaysVisible="true"
+      paginator="true" paginatorPosition="bottom" rows="15"
+      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {JumpToPageDropdown} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+      rowsPerPageTemplate="10,15,25,50" 
+      style="margin:0.5em;"
+      tableStyleClass="takion-table" >
+      	
+       
+        <p:column headerText="SettleId" sortBy="#{_row.settleId}" filterBy="#{_row.settleId}" filterMatchMode="contains"  filterStyle="width:100%">
+       		<h:outputText value="#{_row.settleId}" />
+       </p:column>
+       	
+        <p:column headerText="SettleName" sortBy="#{_row.settleName}" filterBy="#{_row.settleName}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.settleName}" />
+       </p:column>
+        <p:column headerText="SettleGroup" sortBy="#{_row.settleGroup}" filterBy="#{_row.settleGroup}" filterMatchMode="contains"  filterStyle="width:100%">
+       		<h:outputText value="#{_row.settleGroup}" />
+       </p:column>
+        <p:column headerText="settleType" sortBy="#{_row.settleType}" filterBy="#{_row.settleType}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.settleType}" />
+       </p:column>
+        <p:column headerText="accountCode" sortBy="#{_row.accountCode}" filterBy="#{_row.accountCode}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.accountCode}" />
+       </p:column>
+        <p:column headerText="accountSeq" sortBy="#{_row.accountSeq}" filterBy="#{_row.accountSeq}" filterMatchMode="contains"  filterStyle="width:100%" >
+       		<h:outputText value="#{_row.accountSeq}" />
+       </p:column>
+    </p:dataTable> 
+  </h:form>
+</ui:composition>
