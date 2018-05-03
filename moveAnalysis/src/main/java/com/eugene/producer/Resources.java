@@ -58,10 +58,10 @@ public class Resources {
 //    @SecondEm
 //    private EntityManager emRel;
 //    
-//    @Produces 
-//    public Logger produceLog(InjectionPoint injectionPoint) {
-//        return LoggerFactory.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
-//    }
+    @Produces 
+    public Logger produceLog(InjectionPoint injectionPoint) {
+        return LoggerFactory.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
+    }
 
 //    @Produces
 //    @RequestScoped
