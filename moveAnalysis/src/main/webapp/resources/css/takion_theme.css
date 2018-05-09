@@ -9,6 +9,16 @@
 	
 }
 */
+
+/* .takion-table .ui-datatable-scrollable-theadclone .ui-state-active{
+	border: 0px solid white;
+	height : 10px;
+}
+
+.takion-table .ui-datatable-scrollable-theadclone th.ui-state-highlight {
+	border: 0px solid white;
+} */
+
 .ui-panelgrid .ui-panelgrid-cell.takion-left{
 	padding:0px;
 	width: 50%;
@@ -52,6 +62,13 @@ body.layout-compact .takion-button.ui-button.ui-button-text-icon-left .ui-icon{
 	border-top: 5px solid #8BC34A;
 	color : #212121;
 }
+
+.ui-datatable .takion-table  .ui-datatable-scrollable-theadclone th.ui-state-active, .takion-table  .ui-datatable-scrollable-theadclone th.ui-state-highlight{
+	background-color : transparent;
+	border-top: 0px solid #8BC34A;
+	color : #212121;
+}
+
 
 .card.card-w-title.takion-card {
 	height: 100%;

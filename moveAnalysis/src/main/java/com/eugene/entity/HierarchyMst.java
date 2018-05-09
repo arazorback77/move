@@ -41,8 +41,11 @@ public class HierarchyMst implements Serializable, Navigatable {
 	
 	private List<String> keyList = new ArrayList<String>();
 	
+	
+	private Map<List<String>, TreeNode> treeMap = new HashMap<List<String>, TreeNode>();
 	private TreeNode rootNode;
 	private TreeNode selectedNode;
+	
 	private Set<Map<String, String>> nodeDefineSet = new HashSet<Map<String, String>>();   //All Node of the Hierarchy. Node is defined as Property and Value... 날짜별로 달라질수 있다..여기가 아닌것 같다...
 	private Map<String, List<GocMst>> nodeMap = new HashMap<>();						   // GocMst of a given Node 여기가 아닌것 같다...	
 	
@@ -133,6 +136,14 @@ public class HierarchyMst implements Serializable, Navigatable {
 
 	public void setSelectedNode(TreeNode selectedNode) {
 		this.selectedNode = selectedNode;
+	}
+	
+	@Transient
+	public Map<List<String>, TreeNode> getTreeMap() {
+		return treeMap;
+	}
+	public void setTreeMap(Map<List<String>, TreeNode> treeMap) {
+		this.treeMap = treeMap;
 	}
 
 	@Transient

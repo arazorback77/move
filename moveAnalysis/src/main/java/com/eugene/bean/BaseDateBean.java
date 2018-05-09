@@ -21,17 +21,15 @@ import org.slf4j.Logger;
 @SessionScoped
 public class BaseDateBean implements Serializable {
 	@Inject	private Logger logger;
-	@Inject	private EntityManager entityManager;
-	
-
+//	@Inject	private EntityManager entityManager;
+	@Inject private Event<LocalDate> baseDateChangeEvent;
 	
 	private LocalDate baseDate;
 	private LocalDate prevDate;
 	private Date pCalendar;
-
-	@Inject private Event<LocalDate> baseDateChangeEvent;
 	
 	public BaseDateBean() {
+		System.out.println("BaseDate Bean generate");
 	}
 
 	@PostConstruct
@@ -43,17 +41,12 @@ public class BaseDateBean implements Serializable {
 		
 		logger.info("Gen baseDate {} for CurrentDate {}", baseDate, pCalendar);
 	}
-
-
-	
 	public LocalDate getBaseDate() {
 		return baseDate;
 	}
-
 	public void setBaseDate(LocalDate baseDate) {
 		this.baseDate = baseDate;
 	}
-	
 	public Date getpCalendar() {
 		return pCalendar;
 	}
@@ -62,21 +55,19 @@ public class BaseDateBean implements Serializable {
 		this.pCalendar = pCalendar;
 	}
 
-	public void handleDateSelect(SelectEvent  event) {
+//	 ****************************************************
 
+	public void handleDateSelect(SelectEvent  event) {
 		pCalendar = (Date)event.getObject();
 		prevDate = pCalendar.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().minusMonths(1);
 		baseDate =prevDate.withDayOfMonth(prevDate.lengthOfMonth());
 		
 		logger.info("baseDate({}) for CurrentDate {}", baseDate, pCalendar);
-		
-//	
 		baseDateChangeEvent.fire(baseDate);
 	}
 	
 
 
-//	 ****************************************************
 
 
 

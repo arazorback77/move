@@ -1,0 +1,52 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 	xmlns:f="http://xmlns.jcp.org/jsf/core" 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions"
+	>
+
+  <h:form id="formGocMst">
+  	<p:growl id="msgs" showDetail="true" />
+  	
+    <p:dataTable id="tableEntryMst" value="#{gocMstBean.selectedGocMstList}" var="_row" widgetVar="wgGocMst" reflow="true" 
+      emptyMessage="No History Data found with given criteria. Change the Dates"
+      rowKey="#{_row}" rowIndexVar="rowIndex"
+      selectionMode="single" selection="#{gocMstBean.selected}"
+      sortMode="multiple" 
+      editable="true" editMode="cell"
+      resizableColumns="true" 
+      resizeMode="expand"
+      scrollable="true" 
+      
+	  	paginatorAlwaysVisible="true"
+      paginator="true" paginatorPosition="bottom" rows="10"
+      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {JumpToPageDropdown} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+      rowsPerPageTemplate="10,15,25,50" 
+       style="margin:0.5em;" 
+       tableStyleClass="takion-table" >
+      	
+       	<p:ajax event="rowSelect" listener="#{gocMstBean.onRowSelect}" update="@(.ui-datatable)" />
+       
+        <p:column headerText="EntryName" priority="1" sortBy="#{_row.gocId}" filterBy="#{_row.gocId}" filterMatchMode="contains"  filterStyle="width:100%"  style="width: 70%">
+       		<h:outputText value="#{_row.gocId}" />
+       </p:column>
+        <p:column headerText="EntryGroup" priority="2" sortBy="#{_row.gocName}" filterBy="#{_row.gocName}" filterMatchMode="contains"  filterStyle="width:100%" style="width: 30%">
+       		<h:outputText value="#{_row.gocName}" />
+       </p:column>
+       <p:column headerText="Initial Date" priority="2" sortBy="#{_row.portfolio}" filterBy="#{_row.portfolio}" filterMatchMode="contains"  filterStyle="width:100%" style="width: 30%">
+       		<h:outputText value="#{_row.portfolio}" />
+       </p:column>
+         <p:column headerText="Initial Date" priority="2" sortBy="#{_row.lossTestType}" filterBy="#{_row.lossTestType}" filterMatchMode="contains"  filterStyle="width:100%" style="width: 30%">
+       		<h:outputText value="#{_row.lossTestType}" />
+       </p:column>
+         <p:column headerText="Initial Date" priority="2" sortBy="#{_row.cohort}" filterBy="#{_row.cohort}" filterMatchMode="contains"  filterStyle="width:100%" style="width: 30%">
+       		<h:outputText value="#{_row.cohort}" />
+       </p:column>
+         <p:column headerText="Initial Date" priority="2" sortBy="#{_row.initDate}" filterBy="#{_row.initDate}" filterMatchMode="contains"  filterStyle="width:100%" style="width: 30%">
+       		<h:outputText value="#{_row.initDate}" />
+       </p:column>
+     
+       
+    </p:dataTable> 
+  </h:form>
+</ui:composition>

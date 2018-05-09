@@ -6,10 +6,12 @@
 	<p:accordionPanel multiple="true"  value="#{gocMstTreeBean.hierList}" var="_listItem"   >
 			<p:tab title="#{_listItem.hierarchyName}" >
 				<p:tree value="#{_listItem.rootNode}" var="node" dynamic="true" selection="#{_listItem.selectedNode}" selectionMode="single" >
-					<p:ajax event="select" listener="#{gocMstTreeBean.onNodeSelect}" update="@(.ui-datatable)"/>
+					<p:ajax event="select" listener="#{gocMstTreeBean.onNodeSelect}" update="@(.ui-datatable)"   oncomplete="PF('dtGocCf').clearFilters()"/>
+<!-- 					<p:ajax event="select" listener="#{gocMstTreeBean.onNodeSelect}" update="@(.ui-datatable)"   oncomplete="PF('dtGocCf').clearFilters(), PF('dtGocPv').clearFilters()"/> -->
 					
 					<p:treeNode		expandedIcon="ui-icon ui-icon-folder-open" collapsedIcon="ui-icon ui-icon-folder-collapsed" >
-						<h:outputText value="#{node.values()}"  style="font-size: 11px"/>
+						<h:outputText value="#{node.name}"  style="font-size: 11px"/>
+<!-- 						<h:outputText value="#{node.values()}"  style="font-size: 11px"/> -->
 					</p:treeNode>
 					
 				</p:tree>
